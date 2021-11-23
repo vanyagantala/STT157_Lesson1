@@ -1,0 +1,19 @@
+---
+title: 'Sentiment Analysis: A Machine Learning Approach'
+author: "Vanya Ruth Gantala"
+date: "`r Sys.time()`"
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook: default
+bibliography: ["myRef.bib"]
+biblio-style: "apalike"
+link-citations: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Abstract {-}
+
+This paper will study about sentiment analysis
