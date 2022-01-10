@@ -1,6 +1,100 @@
 # Review of Related Literature
 
-Insert RRL here.
+The literature review discusses the various studies conducted by researchers on sentiment analysis and some additional information about the analysis.
+
+
+## Sentiment Analysis
+
+Texts are unstructured. Thus, there is a need to undergo analysis to gather data not visible by the text itself. Lee et al. (2014) concluded that text has predictive power for stock price movement. Their conclusion is evidence that one cannot just ignore the importance of text in data analysis.
+
+
+Text analytics and sentiment analysis are methods to extract usable data from texts; however, they differ. As stated by Bauer, Bicquelet, and Suerdem (2014), text analytics aims to analyze and discover the meanings behind a text from an expert point of view. This method includes the text structure not limited to the grammar and the relationship among the words for the analysis. On the other hand, according to Gupta et al. (2017), sentiment analysis is a technique that derives opinions from expressions and retrieves sentiment that it
+mimics. Sentiment analysis determines if a text is positive, negative, or neutral.
+
+
+Medhat, Hassan, & Korashy (2014) classified sentiment analysis into three levels:
+document, sentence, and aspect. Document-level sentiment analysis takes the whole
+document to identify what expression is radiated, positive, negative, or neutral opinion. Sentence level analyzes each sentence of a document by first identifying whether the sentence is subjective or objective. Each sentence will then be categorized according to its opinion, positive, negative, or neutral sentiment. However, document level and sentence level sentiment analyses do not provide vital details on all aspects of the entity. Hence, there is aspect-level sentiment analysis. This level aims to determine sentiments with regards to an opinion's specific aspects.
+
+
+## Pre-processing
+
+Pre-processing of the data prepares the data before it undergoes analysis since texts usually have lots of noise. Krouska, Troussas, and Virvou (2016) explored various pre- processing options on three different data sets. A total of five pre-processing techniques were covered in their study and were employed in the WEKA data mining package. First is the weighting scheme using TF-IDF (term frequency-inverse document frequency). TF-IDF provides a numerical statistic that shows how a word is vital to a document in a corpus. The following technique is stemming, the process of removing suffixes of the word. They utilized the library, Snowball stemmer, which is considered as the most liked and standard approach. The third technique is stop-words removal using Rainbow list. In this step, words that are not necessary for the text classification are eliminated. Tokenization is the fourth technique outlined in this study, which results in a word vector bag-of-words. They proposed NGramTokenizer to compare words unigram, bigram, and 1-to-3-gram. Lastly, feature selection was performed. This last technique decreases the number of attributes to achieve much higher accuracy. There will be limitations for overfitting, improvement of accuracy, and lessening training time by making feature selection. Through WEKA, the AttributeSelection filter is provided to pick an attribute evaluation method and a search strategy. Three options are examined in this study: no filter, InfoGainAttributeEval, which assesses the worth of an attribute by measuring information accumulation for the class, and ClassifierAttributeEval, which also assesses the worth of an attribute by employing a user- specified classifier. Results show that 1-to-3-gram performs better than other representations, with almost 90% accuracy for some classifiers and data sets. Moreover, in some classifiers, attribute selection gives higher accuracy compared to selecting all attributes.
+
+
+## Sentiment Analysis Approach
+
+Numerous studies use two types of sentiment analysis approaches the machine learning approach and the lexicon-based approach
+
+
+### Machine Learning Approach
+
+The machine learning approach works by taking a training data set before a final classifier and applying the same data set. A comparative study by Devika, Sunitha, and Ganesh (2016) revealed two advantages with this approach: the unnecessary need for a dictionary and the high accuracy of classification. However, this approach has a disadvantage; the classifier may not work with other areas besides the initially trained area. There are two classifications for this approach, supervised and unsupervised learning. The supervised learning method depends on identified training documents. Under supervised learning, there are various classifiers: decision tree, linear, rule-based, and probabilistic. The unsupervised learning method, on the other hand, overcame the difficulties of creating identified training documents. 
+
+Four classifiers under supervised learning were discussed in a sentiment analysis algorithms and applications survey by Medhat et al. (2014)
+
+
+#### Decision Tree Classifiers
+
+Decision tree classifiers divide data by condition on the attribute value. This condition is the presence or absence of a word or set of words. The process proceeds until the leaf nodes contain the minimum amount of records which will then be used for classification. Some other kinds of conditions can be used for the partitioning of the documents later on. That is, the documents are checked for possible similarities to correlate a set of words. Three splits are exposed in their study: single attribute split, which functions when there is a presence or absence of word or words at a specific node in the tree, similarity-based multi- attribute split, splits by taking the similarities of documents to a predetermined word cluster, and discriminant-based multi-attribute split, the split is performed using discriminants such as Fisher discriminate.    
+
+
+#### Linear Classifiers
+
+Their study reviews two of the most popular linear classifiers, support vector machines, and neural networks.
+
+
+##### Support Vector Machines Classifiers
+
+A text has a sparse nature where few features are irrelevant but can be correlated somehow, which is why a support vector machine classifier is ideal for text data. This classifier takes a large amount of training set, which is a disadvantage. Accordingly, SVM has the advantage of having high-dimensional input space, some extraneous features, and scattered document vectors (Devika et al., 2016). In addition, Zainuddin and Selamat (2014) used SVM in their study to classify whether texts are positive or negative from benchmark data sets with a ratio of 70:30 for training and testing set, respectively. Choosing the features based on their chi-squared statistics value reduced the dimensionality and noise in the text, resulting in the classifier's high accuracy.
+
+
+##### Neural Network
+
+Neurons are the basic unit in the neural network, and the inputs to these neurons are word frequencies in a document. Several studies use neural network methods for their analysis, such as the convolutional neural network. Ouyang et al. (2015) conducted sentiment analysis on movie reviews using a convolutional neural network, a deep learning model and is easier to train than other deep learning methods. With the combination of the word2vec tool, a neural net that processes texts, the convolutional neural network can outperform some simple classification algorithms. 
+
+
+#### Rule-based Classifiers
+
+The data space in a rule-based classifier is modeled with a collection of rules. This approach is used by defining diverse rules for getting the opinion, and it works by testing each token from each sentence in a document (Devika et al., 2016). Bidulya and Brunova (2016) applied a total of nine rules in a specific order in their study. They used lexical and syntactic structures with a positive and negative lexicon in 200 customer reviews of a Russian bank's service quality. The study uses the Naive-Bayes classifier compared to the rule-based classifier. As a result, the latter exceeded the Naive-Bayes classifier.
+
+
+#### Probabilistic Classifiers
+
+Mixture models for classification are used in this type of classifier. A mixture model assumes that every class is a part of the mixture. This mixture component provides a likelihood of sampling a particular term. Probabilistic classifiers are also recognized as generative classifiers.
+
+
+##### Naive Bayes Method
+
+The simplest and the most commonly used classifier is Naive Bayes. This classifier uses the Bayes Theorem to predict the probability that a given feature set goes to an appropriate label. Naive Bayes classifier assumes the independence of the features. Several studies use Naive Bayes as a classifier because of its speed, including the study of Goel, Gautam, and Kumar (2016). They trained 1.6 million tweets and tested 100 most recent tweets wherein the system returns an accuracy of 58.40%. They added that this accuracy could be improved using sentiwordnet, a lexical database for the English language, and Naive Bayes as the classifier.
+
+
+##### Bayesian Network
+
+A Bayesian network is a full model for the variables or large sets of words and their relationships. This classifier is a frequently used model, especially in text mining due to its expensive nature.
+
+
+##### Maximum Entropy Classifier
+
+Also identified as a conditional exponential classifier, this classifier can handle extensive data without assuming the features' independence. Liu and Meng (2014) conducted an aspect-based sentiment analysis with several subtasks, aspect term extraction, aspect category detection, aspect term polarity, and aspect category polarity. They used a maximum entropy classifier for these subtasks, except aspect term extraction, and returned differing performances. Applying boosting method on the classifier gave high accuracy for the subtask of aspect category detection. Other subtasks also gained average accuracies with maximum entropy.
+
+Gupta et al. (2017) used machine learning algorithms for Twitter sentiment analysis with Python as the programming language. Their data have undergone various pre-processing steps to make it more practical for machine learning. These pre-processing steps include removal of retweets, conversion of the upper case to lower case, stopword removal, removal of twitter feature, stemming, elimination of unique characters and digits, dictionary creation to remove unimportant words and punctuation marks, expansion of slangs and abbreviations, spelling correction, generating a dictionary for essential words and emoticons, and part of speech tagging. They used unigram features, N-gram features, and external lexicon for feature extraction. Various sentiment classifiers are used and compared in this study: Bayesian Logistic, Naive Bayes, Support Vector Machine, Artificial Neural Network, Case Base Reasoning, Maximum Entropy Classifier, and Ensemble Classifier. The collected data set was divided into two sets: training and testing. They added that it is upon the user to choose the number of classes for classification but bear in mind that as the number of classes increases, the performance of classifiers decreases. Upon comparing each classifier's accuracy, maximum entropy and ensemble classifier achieved the highest accuracy.
+
+
+### Lexicon-based Approach
+
+The lexicon-based approach is unsupervised learning with the advantage of not requiring labeled data and a learning procedure and the disadvantage of needing vital linguistic resources (Devika et al., 2016). This approach has varying techniques, such as dictionary-based and corpus-based methods. Taj, Shaikh, and Meghji (2019) briefly mentioned these methods. The dictionary-based method uses a lexicon dictionary to sort positive opinion and negative opinion words. In contrast, the corpus-based method uses an extensive collection of words. Other opinion words are detected within the context based on syntactic patterns.
+
+Taj et al. (2019) employed lexicon-based sentiment analysis on the BBC news data set. Their study seeks to identify positive, negative, or neutral opinions from the latest articles. A dictionary-based approach was used in this study, starting with collecting data, text pre- processing, calculation of sentiment polarity, calculation of sentiment scores, and, lastly, sentiment results. The whole pre-processing steps were carried out using the Rapid miner tool, which provides numerous sets for pre-processing. A statistical tool known as TF-IDF was used to rank words according to their occurrence in the news article. Afterward, to determine the polarity of words and assign sentiment scores, they used the WordNet lexical dictionary. After the total sentiment score calculation using the extract sentiment operator, news articles were classified into positive, negative, and neutral.
+
+Kumar and Sebastian (2012) introduced a hybrid approach involving both dictionary- based and corpus-based methods. A series of pre-processing steps were implemented to their Twitter data set. A dictionary-based method was used to find semantic orientations of verbs and adverbs to heed the importance of some adverbs, such as not, with the help of the dictionary WordNet. Since adjectives tend to be domain-specific, a corpus-based method was used. Their scoring method has two groups: adjective group with both adverb and adjective, and verb group with both adverb and verb. In order to calculate the overall sentiment of the tweet, they took the mean strength of all opinion indicators like emoticons, exclamation marks, and more. In addition, they proposed a formula to achieve the Twitter sentiment score and employed it in some sample tweets. Results show that their proposed system has the qualities of finding the semantic orientation of tweets.
+
+Three dictionaries were compared in Roul's (2021) comparative discussion: AFFIN Lexicon, the most popular and simplest lexicons, SentiWordNet, a lexical source for sentiment analysis, and VADER or Valence Aware Dictionary and Sentiment Reasoner, a lexicon specifically made for social media sentiments. These dictionaries return almost equivalent accuracy with 72% accuracy for the AFFIN lexical model, which is the highest. Furthermore, supervised learning using the models SVM and Logistic Regression was compared using the Bag of Words Model and TF-IDF to extract features. Using a bag of words model, the logistic regression model returned the highest accuracy of all the models, including lexical models.
+
+
+## Application
+
+Feldman (2013) discussed several applications of sentiment analysis in his study. The most common target for sentiment analysis is consumer reviews on products and services. Social media sites such as Twitter and Facebook are good data sources considering some businesses monitor their reputation on the said sites. In addition, politicians can make use of sentiment analysis. Campaign managers can track voters' feelings about different issues, statements, or speeches regarding the candidates. The financial or stock market can also utilize sentiment analysis since sentiments, positive or negative, significantly affect stock price movement.
 
 <!-- `r stringi::stri_rand_lipsum(1)` -->
 

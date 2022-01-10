@@ -1,6 +1,18 @@
 # Introduction
 
-This is my introduction.
+Since the pandemic, numerous studies have been conducted, be it COVID-19 related
+studies or not. Due to Coronavirus, people slowly adapted to the new normal. People stay at home to avoid the spread of the virus and rely on the internet to ease their boredom. It is a haven for many people and is available 24/7. Population growth results in the increase of internet users, which has approximately 59.5% of the global population, according to Johnson (2021). Following the pandemic, it has been reported in a survey in China that among their respondents, 46.8% of them increased independence on internet use (Sun et al., 2020), which is significant given that China has the most internet users worldwide (Johnson, 2021). 
+
+
+The internet consists of numerous sentiments from numerous individuals due to increasing literate internet users. The internet has become the bank of people's opinions. These sentiments entail important unseen information only found through analysis. 
+
+
+Sentiment analysis, also known as opinion mining, finds and categorizes opinions
+from texts to determine the writer's perspective concerning a specific topic or product (Feldman, 2013). These perspectives are sentiments that may be positive, neutral, or negative. Sentiment analysis aims to determine various emotions: happiness, sadness, disgust, anger, and more, and classify this as positive, neutral, or negative. Indeed, anyone can categorize opinions, but one can take a large amount of data to analyze using the technology with sentiment analysis. 
+
+
+Sentiment analysis is crucial for acquiring essential data from opinions. It is a
+powerful tool to understand a person's feelings and an imperative aid to anyone, especially business owners, to monitor their business ventur
 
 <!-- `r stringi::stri_rand_lipsum(1)` -->
 
